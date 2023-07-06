@@ -1,0 +1,9 @@
+.button{
+    background-color: yellow;
+    text-align: center;
+    color: black;
+    padding: 15px;
+    border: none;
+    font-family: Arial;
+    margin-top: 20px;
+}

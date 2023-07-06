@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zip Application</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body>
+<button id="gozatButton" class="button" style="margin-left: 65px;">Gözat</button>
+<button class="button" id="zipButton" onclick="onClickButton()">Ziple</button><br><br>
+
+<h4 style="font-weight: bold; display: none; margin-left: 110px;" id="headerForFiles">Files</h4>
+
+<div id="files"></div>
+
+<script src="index.js"></script>
+
+</body>
+<script>
+  function onClickButton() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const files = Array.from(checkboxes).map(checkbox => checkbox.value);
+    peripheralAPI.send('takeFile',files);
+  }
+</script>
+</html>
