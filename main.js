@@ -4,12 +4,16 @@ const fs = require('fs');
 const archiver = require('archiver');
 const axios = require('axios');
 const fse = require('fs-extra');
+require('update-electron-app')({
+  repo: 'EmJeeTee/nodejs-zip',
+  updateInterval: '5 minutes',
+})
+
 
 let fullPath;
 let win;
 let outputFilePath;
 const os = require('os');
-
 
 function openLookFolder(event,msg)
 {
