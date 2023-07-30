@@ -13,14 +13,16 @@ const ipc = {
         // From render to main.
         'send': [
             'takeFile',
-            'lookFolder'
+            'lookFolder',
+            'updateMessage'
             ],
 
         // From main to render.
         'receive': [
             'files',
             'lookFolder',
-            'clear'
+            'clear',
+            "update"
         ],
 
         // From render to main and back again.

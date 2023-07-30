@@ -7,10 +7,11 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
 <body>
+<strong><div id="message" style="margin-left: 50px;"></div></strong>
 <button id="gozatButton" class="button" style="margin-left: 65px;">Gözat</button>
 <button class="button" id="zipButton" onclick="onClickButton()">Ziple</button><br><br>
 
-<h3 style="font-weight: bold; display: none; margin-left: 110px;" id="headerForFiles">Files</h3>
+<h2 style="font-weight: bold; display: none; margin-left: 110px;" id="headerForFiles">FILES</h2>
 
 <div id="files"></div>
 
@@ -18,6 +19,8 @@
 
 </body>
 <script>
+  let tempMessage = document.getElementById("message").innerHTML;
+  peripheralAPI.send('updateMessage',tempMessage);
   function onClickButton() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     const files = Array.from(checkboxes).map(checkbox => checkbox.value);

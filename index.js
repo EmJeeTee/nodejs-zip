@@ -13,6 +13,10 @@ peripheralAPI.receive('clear', msg => {
     }
 });
 
+peripheralAPI.receive('update',msg =>{
+  document.getElementById("message").innerHTML = msg;
+})
+
 peripheralAPI.receive('files', msg => {
 
     msg.forEach(file => {

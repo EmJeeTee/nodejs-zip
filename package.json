@@ -1,13 +1,26 @@
 {
   "name": "electron-app",
-  "version": "1.0.0",
-  "description": "Selam",
+  "version": "1.0.8",
+  "description": "NodeJS-ZIP",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "package": "electron-forge package --arch=ia32 --platform=win32 production",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "dist": "electron-builder",
+    "exe": "electron-forge make --arch=ia32 --platform=win32 --targets=@electron-forge/maker-squirrel"
+  },
+  "build": {
+    "appId": "com.emjeetee.autoupdater",
+    "productName": "AutoUpdater Example",
+    "win": {
+      "target": "nsis"
+    },
+    "directories": {
+      "output": "test"
+    }
   },
   "author": "Metin T",
   "license": "MIT",
@@ -18,14 +31,19 @@
     "@electron-forge/maker-squirrel": "^6.2.1",
     "@electron-forge/maker-zip": "^6.2.1",
     "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
-    "electron": "^25.2.0"
+    "@electron-forge/publisher-github": "^6.2.1",
+    "electron": "16.2.8",
+    "electron-builder": "^24.4.0"
   },
   "dependencies": {
     "archiver": "^5.3.1",
     "axios": "^1.4.0",
+    "child_process": "^1.0.2",
+    "decompress": "^4.2.1",
     "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^6.1.1",
     "fs-extra": "^11.1.1",
+    "semver": "^7.5.4",
     "update-electron-app": "^2.0.1"
   }
 }

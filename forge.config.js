@@ -1,8 +1,21 @@
 module.exports = {
   packagerConfig: {
-    asar: true,
+    asar: true
   },
   rebuildConfig: {},
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'EmJeeTee',
+          name: 'nodejs-zip'
+        },
+        prerelease: false,
+        draft: true
+      }
+    }
+  ],
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
