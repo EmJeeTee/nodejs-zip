@@ -342,7 +342,7 @@ async function sendZip()
 			f.append('messageType', 'ElectronZip');
 			f.append('file', fs.createReadStream(outputFilePath));
 
-      const zipUrl = "https://vte-stage.crane.aero/peripherallog";
+      const zipUrl = "";
 			console.log('Uploading files to', zipUrl)
 
 			await require("axios")({
